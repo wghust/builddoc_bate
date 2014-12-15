@@ -1,0 +1,136 @@
+<%include header%>
+	<script type="text/javascript" src="/highlight/lib/codemirror.js"></script>
+	<script type="text/javascript" src="/highlight/mode/markdown/markdown.js"></script>
+	<script type="text/javascript" src="/highlight/addon/selection/active-line.js"></script>
+	<script type="text/javascript" src="/highlight/addon/edit/matchbrackets.js"></script>
+	<script type="text/javascript" src="/highlight/addon/mode/loadmode.js"></script>
+	<script type="text/javascript" src="/javascripts/lib/marked.js"></script>
+	<script type="text/javascript" src="/javascripts/lib/jquery.easing.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/highlight/lib/codemirror.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/highlighttheme.min.css">
+	<script type="text/javascript" src="/javascripts/business/addblock/addblock.js"></script>
+	<style type="text/css">
+	.CodeMirror {
+		height: 600px;
+		padding: 10px;
+		border: 1px solid #B2B2B2;
+		border-radius: 5px;
+		line-height: 20px;
+	}
+	</style>
+	<div class="container opcontainer" data-op="add">
+		<div class="newmark" data-open="0">
+			<input type="button" class="closenewmark" value="关闭">
+			<span class="newmark_title">markdown名称</span><br>
+			<textarea class="newmark_textarea"></textarea>
+		</div>
+		<div class="left">
+			<div class="block" data-pageid="<%=pageid%>">
+				<div class="block_top">
+					<span>添加块</span>
+				</div>
+				<div class="block_con">
+					<input type="text" class="b_title" placeholder="添加标题">
+					<div class="b_cat">
+						<div class="b_selected_cat">
+							<% if(cats.length!=0) {%>
+								<span data-value="<%=cats[0].catid%>"><%=cats[0].catname%></span>
+							<% } else {%>
+								<span data-value="0">无栏目</span>
+							<% } %>
+						</div>
+						<div class="b_select_panel">
+							<ul class="b_select_ul">
+								<% if(cats.length!=0) {%>
+									<% cats.forEach(function(cat,index){ %>
+										<li data-value="<%=cat.catid%>" id="<%=cat.catid%>">
+											<span class="b_thiscat"><%=cat.catname%></span>
+											<span class="b_delete">删除</span>
+											<span class="b_edit" data-edit="false">编辑</span>
+											<span class="b_dec"><%=cat.catdec%></span>
+											<div class="clear"></div>
+										</li>
+									<% }) %>
+								<% } %>
+							</ul>
+							<div class="add_cat_form" data-value="">
+								<input type="text" placeholder="栏目名称" class="add_cat_form_title">
+								<textarea placeholder="栏目描述" class="add_cat_form_dec"></textarea>
+							</div>
+							<input type="button" data-open="hide" class="add_cat_btn" value="添加栏目">
+						</div>
+						<div class="b_edit_panel" data-id="">
+							<input type="text" placeholder="栏目名称" class="edit_cat_form_title">
+							<textarea placeholder="栏目描述" class="edit_cat_form_dec"></textarea>
+							<input type="button" class="edit_savecat_btn" value="保存编辑">
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<textarea placeholder="添加描述" class="b_description"></textarea><br>
+					<input type="button" class="preview" data-open="0" value="预览">
+					<div class="add_mark_panel">
+						<input type="button" class="addmark" data-open="0" value="添加markdown">
+						<input type="file" class="addmarkfile">
+					</div>
+					<div class="useagepanel">
+						<input type="button" class="useage" data-open="0" value="语法介绍">
+						<div class="useageshow">
+							<h3>语法介绍</h3>
+							<div class="oneusedec">
+							<h4>标题</h4>
+							<pre><code>#   表示&lt;h1&gt;
+### 表示&lt;h3&gt;
+以此类推
+</code>
+</pre>
+							</div>
+							<div class="oneusedec">
+							<h4>代码块</h4>
+
+							<pre><code>```javascript
+function test() {
+    alert("right");
+}
+```
+</code></pre>
+</div>
+<div class="oneusedec">
+							<h4>表格</h4>
+							<pre><code>ID|NAME|CLASS|GRADE
+---|---|---|---
+1|anamary|06|高三
+2|wbb|09|高一
+3|lt|电信1班
+</code></pre>
+</div>
+							<div class="oneusedec">
+							<h4>链接</h4>
+							<code>[百度](http://www.baidu.com)</code>
+							</div>
+							<div class="oneusedec">
+							<h4>图片</h4>
+							<code>![百度](http://www.baidu.com/1.png)</code>
+							<!-- </pre> -->
+							</div>
+							<div class="clear"></div>
+
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="write_form">
+						<textarea class="newedit" id="write_text" placeholder="新内容"></textarea><br>
+						<div class="previewpanel">
+							
+						</div>
+					</div>
+					<input type="button" class="saveall" data-op="save" value="保存">
+				</div>
+				<div class="block_foot">
+					
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+<%include footer%>

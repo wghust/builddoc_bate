@@ -1,0 +1,22 @@
+<% include header_2 %>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/pagelist.css">
+	<script type="text/javascript" src="/javascripts/business/pagelist/pagelist.js"></script>
+	<div class="container">
+		<div class="pagelist">
+			<h1>Page List</h1>
+			<% if(pages!=null) {%>
+				<% pages.forEach(function(page,index){ %>
+					<div class="onepage">
+						<a href="/page/<%=page.uid%>/index" class="page_a">
+							<img src="" class="bg_img">
+						</a>
+						<span class="page_name"><%=page.pagename%></span>
+						<a class="page_edit" href="/page/<%=page.uid%>/edit" data-uid="<%=page.uid%>">Edit</a>
+						<a class="page_delete" href="/page/<%=page.uid%>/delete" data-uid="<%=page.uid%>">Delete</a>
+					</div>
+				<% }) %>
+			<% } %>
+			<div class="clear"></div>
+		</div>
+	</div>
+<% include footer %>

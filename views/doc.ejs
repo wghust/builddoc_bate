@@ -1,0 +1,134 @@
+<%include header%>
+	<div class="container">
+		<div class="right">
+			<div class="right_cats">
+				<% t_oldcatid = 0; t_catindex = 0; t_blockindex = 0;%>
+				<% blocks.forEach(function(block,index){ %>
+					<% if(block.catid!=t_oldcatid) {
+						t_oldcatid = block.catid;
+						t_catindex++;
+						t_blockindex = 1;
+					%>
+						<a href="#cat_<%=block.catid%>" class="tocat"><%=t_catindex %>:<%=block.catname%></a>
+						<a href="#block_<%=block.uid%>" class="toblock"><%=t_catindex %>.<%=t_blockindex%>:<%=block.title%></a>
+					<%
+					} else {
+						t_blockindex++;
+					%>
+						<a href="#block_<%=block.uid%>" class="toblock"><%=t_catindex %>.<%=t_blockindex%>:<%=block.title%></a>
+					<%
+					}
+					%>
+				<%	}); %>
+				<a href="#cat_comment" class="tocat"><%=t_catindex+1%>:评论</a>
+			</div>
+		</div>
+		<div class="left">
+			<% oldcatid = 0; catindex = 0;blockindex = 0%>
+			<% blocks.forEach(function(block,index){ %>
+				<% if(block.catid!=oldcatid) {
+					oldcatid = block.catid;
+					catindex++;
+					blockindex = 1; %>
+					<div class="bigcat" id="cat_<%=block.catid%>">
+						<span><%=catindex%>:&nbsp;&nbsp;<%=block.catname%></span>
+					</div>
+				<% } else {
+					blockindex++;
+				}%>
+				<div class="block" id="block_<%=block.uid%>">
+					<div class="block_con">
+						<div class="one_title">
+							<span class="one_num"><%=catindex %>.<%=blockindex%>:</span>
+							<span class="one_name"><%=block.title%></span>
+
+							<% if(locals.user) {%>
+								<% if(locals.user.uid == userid) {%>
+									<a href="/block/<%=pageid%>/<%=block.uid%>" class="index_edit">查看</a>
+								<% } %>
+							<% } %>
+						</div>
+						<% if(block.dec) { %>
+						<div class="one_dec">
+							<span><%=block.dec%></span>
+							<div class="clear"></div>
+						</div>
+						<% } %>
+						<div class="one_con">
+							<%-block.content%>
+						</div>
+					</div>
+				</div>
+			<%	})%>
+			<div class="bigcat" id="cat_comment">
+				<span>评论</span>
+			</div>
+			<div class="block">
+				<div class="block_con" style="padding:20px">
+					<!-- 多说评论框 start -->
+					<div class="ds-thread" data-thread-key="<%=pageid%>" data-title="<%=pageid%>" data-url="/page/<%=pageid%>/index"></div>
+						<!-- 多说评论框 end -->
+						<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+						<script type="text/javascript">
+						var duoshuoQuery = {short_name:"anamary"};
+						(function() {
+							var ds = document.createElement('script');
+							ds.type = 'text/javascript';ds.async = true;
+							ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+							ds.charset = 'UTF-8';
+							(document.getElementsByTagName('head')[0] 
+							 || document.getElementsByTagName('body')[0]).appendChild(ds);
+						})();
+						</script>
+						<!-- 多说公共JS代码 end -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<link rel="stylesheet" href="/stylesheets/default.min.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/doc.css">
+	<script type="text/javascript" src="/javascripts/lib/animatescroll.min.js"></script>
+	<script type="text/javascript" src="/javascripts/lib/highlight.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		// hljs.initHighlightingOnLoad();
+		hljs.initHighlighting();
+		$(".right_cats a").click(function(e){
+			var _this = $(this);
+			var _thisid = _this.attr('href');
+			$(_thisid).animatescroll({
+				scrollSpeed:200,
+				padding:110
+			});
+			return false;
+		});
+
+
+		$(".ainblock").click(function(e){
+			// console.log()
+			var _this = $(this);
+			var _thisid = _this.attr('href');
+			// alert(_thisid);
+			$(_thisid).animatescroll({
+				scrollSpeed:200,
+				padding:110
+			});
+			return false;
+		});
+
+		// auto
+		auto_right = function() {
+			var maxHeight = $(window).height()-50; 
+			$(".right_cats").css({
+				'height':maxHeight+'px'
+			});
+		};
+		auto_right();
+		$(window).resize(function(){
+			auto_right();
+		});
+	});
+	</script>
+<%include footer%>

@@ -1,0 +1,39 @@
+<% include header_2 %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/pagelist.css">
+<script type="text/javascript" src="/javascripts/business/pagelist/addpage.js"></script>
+<div class="container">
+	<div class="left">
+		<div class="block">
+			<div class="block_top">
+				<span>添加page</span>
+			</div>
+			<div class="block_con">
+				<input type="text" placeholder="pagename" class="page_add_name">
+				<div class="page_tag">
+					<span data-tag="1" class="page_tag_span">技术</span>
+					<ul data-open="0">
+						<li data-tag="1">技术</li>
+						<li data-tag="2">生活</li>
+						<li data-tag="3">议论</li>
+					</ul>
+				</div>
+				<div class="page_ys">
+					<span data-ys="0" class="page_ys_span">公共</span>
+					<ul data-open="0">
+						<li data-ys="0">
+							公共
+						</li>
+						<li data-ys="1">
+							私有
+						</li>
+					</ul>
+				</div>
+				<br>
+				<div class="clear"></div>
+				<textarea placeholder="Page Description" class="page_add_dec"></textarea><br>
+				<input type="button" value="Add" class="page_btn_add">	
+			</div>
+		</div>
+	</div>
+</div>
+<% include footer %>

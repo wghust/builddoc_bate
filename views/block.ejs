@@ -1,0 +1,43 @@
+<% include header %>
+	<div class="container">
+		<div class="left">
+			<% if(block) {%>
+			<div class="block" data-pageid="<%=pageid%>">
+				<div class="block_top">
+					<span>块显示</span>
+					<% if(locals.user) {%>
+						<% if(locals.user.uid == userid) {%>
+							<a href="/block/<%=pageid%>/<%=block.uid%>/edit" class="editurl">编辑</a>
+							<a href="/block/<%=pageid%>/<%=block.uid%>/delete" class="deleteurl">删除</a>
+						<% } %>
+					<% } %>
+				</div>
+				<div class="block_con">
+					<div class="one_title">
+						<span class="one_num"><%=block.catid %>.<%=block.uid%>:</span>
+						<span class="one_name"><%=block.title%></span>
+					</div>
+					<% if(block.dec) { %>
+					<div class="one_dec">
+						<span><%=block.dec%></span>
+						<div class="clear"></div>
+					</div>
+					<% } %>
+					<div class="one_con">
+						<%-block.content%>
+					</div>
+				</div>
+			</div>
+			<% } %>
+		</div>
+		<div class="right">
+			
+		</div>
+	</div>
+	<link rel="stylesheet" href="/stylesheets/default.min.css">
+	<script type="text/javascript" src="/javascripts/lib/highlight.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/block.css">
+	<script type="text/javascript">
+	hljs.initHighlightingOnLoad();
+	</script>
+<% include footer %>

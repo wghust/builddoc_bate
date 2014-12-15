@@ -1,0 +1,25 @@
+<% include header_2 %>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/getin.css">
+	<div class="container">
+		<div class="getinpanel" data-op="register">
+			<div class="panel_top">
+				<span>注册</span>
+			</div>
+			<div class="panel_con">
+				<input type="text" class="user_text user_email" placeholder="Email">
+				<span class="user_msg red"></span>
+				<br>
+				<input type="text" class="user_text user_username" placeholder="Username">
+				<span class="user_msg red"></span>
+				<br>
+				<input type="password" class="user_text user_password" placeholder="Password">
+				<span class="user_msg red"></span>
+				<br>
+
+				<input type="button" class="user_btn user_register" value="注册">
+				<a href="/admin/login" class="user_btn user_login">转到登陆</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/javascripts/business/user/user.js"></script>
+<% include footer %>

@@ -1,0 +1,172 @@
+@media screen and (min-width:768px) {
+	.getinpanel {
+		width: 600px;
+		position: relative;
+		margin: 0 auto;
+		padding: 10px;
+		border: 1px solid #B2B2B2;
+		border-radius: 5px;
+		background-color: white;
+		margin-top: 50px;
+	}
+	.getinpanel .panel_top {
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.getinpanel .panel_top span {
+		font-size: 24px;
+	}
+	.getinpanel .panel_con {
+		/*text-align: center;*/
+		padding: 20px;
+	}
+	.user_text {
+		border: 1px solid #B2B2B2;
+		padding: 10px 25px;
+		border-radius: 5px;
+		outline: 0;
+		font-size: 16px;
+		margin-bottom: 10px;
+		margin-left: 170px;
+	}
+	.user_btn {
+		border: 1px solid #B2B2B2;
+		border-radius: 5px;
+		padding: 5px 10px;
+		cursor: pointer;
+		outline: 0;
+		background-image: linear-gradient( #ffffff, #f0f0f0) !important;
+		background-image: -webkit-linear-gradient( #ffffff, #f0f0f0) !important;
+	}
+	.user_btn:active {
+		box-shadow: 0 1px 2px #B2B2B2 inset;
+	}
+	.user_register {
+		margin: 10px 10px 10px 200px;
+	}
+	.user_login {
+		font-size: 12px;
+		color: black;
+		padding: 5px 10px;
+		margin-left: 20px;
+	}
+	.user_l_login {
+		margin: 10px 10px 10px 200px;
+	}
+	.user_l_register {
+		font-size: 12px;
+		color: black;
+		padding: 5px 10px;
+		margin-left: 20px;
+	}
+
+
+	.user_msg {
+		padding: 5px 10px;
+	}
+	.user_msg.red {
+		color: red;
+	}
+	.user_msg.green {
+		color: #3592DD;
+	}
+	.user_text:focus {
+		/*border: 1px solid #3592DD;*/
+		box-shadow: 1px 1px 3px #B2B2B2 inset,-1px 1px 3px #B2B2B2 inset;
+	}
+
+	.getinpanel .panel_con .user_email {
+		
+	}
+	.getinpanel .panel_con .user_username {
+		
+	}
+}
+@media screen and (max-width: 768px) {
+	.getinpanel {
+		width: 96%;
+		position: relative;
+		margin: 0 auto;
+		padding: 10px;
+		border: 1px solid #B2B2B2;
+		border-radius: 5px;
+		background-color: white;
+		margin-top: 50px;
+		text-align: center;
+	}
+	.getinpanel .panel_top {
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.getinpanel .panel_top span {
+		font-size: 24px;
+	}
+	.getinpanel .panel_con {
+		/*text-align: center;*/
+		padding: 20px;
+	}
+	.user_text {
+		border: 1px solid #B2B2B2;
+		padding: 10px 25px;
+		border-radius: 5px;
+		outline: 0;
+		font-size: 16px;
+		margin: 0 auto;
+		margin-bottom: 10px;
+		/*margin-left: 170px;*/
+	}
+	.user_btn {
+		border: 1px solid #B2B2B2;
+		border-radius: 5px;
+		padding: 5px 10px;
+		cursor: pointer;
+		outline: 0;
+		background-image: linear-gradient( #ffffff, #f0f0f0) !important;
+		background-image: -webkit-linear-gradient( #ffffff, #f0f0f0) !important;
+	}
+	.user_btn:active {
+		box-shadow: 0 1px 2px #B2B2B2 inset;
+	}
+	.user_register {
+		/*margin: 10px 10px 10px 200px;*/
+	}
+	.user_login {
+		font-size: 12px;
+		color: black;
+		padding: 5px 10px;
+		margin-left: 20px;
+	}
+	.user_l_login {
+		/*margin: 10px 10px 10px 200px;*/
+	}
+	.user_l_register {
+		font-size: 12px;
+		color: black;
+		padding: 5px 10px;
+		margin-left: 20px;
+	}
+
+
+	.user_msg {
+		padding: 5px 10px;
+	}
+	.user_msg.red {
+		color: red;
+	}
+	.user_msg.green {
+		color: #3592DD;
+	}
+	.user_text:focus {
+		/*border: 1px solid #3592DD;*/
+		box-shadow: 1px 1px 3px #B2B2B2 inset,-1px 1px 3px #B2B2B2 inset;
+	}
+
+	.getinpanel .panel_con .user_email {
+		
+	}
+	.getinpanel .panel_con .user_username {
+		
+	}
+}

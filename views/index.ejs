@@ -1,0 +1,82 @@
+<% include header_2 %>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+	<script type="text/javascript" src="/javascripts/lib/jquery.pin.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".top_position").pin({
+			containerSelector:".topview",
+			padding: {
+				top: 70
+			},
+			isresize:false
+		});
+	});
+	</script>
+	<div class="container">
+		<div class="index_con">
+			<div class="index_pagetag">
+				<ul>
+					<li>
+						<a href="/show" data-tag="0">所有</a>
+					</li>
+					<li>
+						<a href="/show/1" data-tag="1">科技</a>
+					</li>
+					<li>
+						<a href="/show/2" data-tag="2">生活</a>
+					</li>
+					<li>
+						<a href="/show/3" data-tag="3">议论</a>
+					</li>
+				</ul>
+			</div>
+			<div class="index_pagelist">
+				<% pages.forEach(function(page,index){ %>
+					<div class="index_block">
+						<div class="index_block_top">
+							<a href="/page/<%=page.uid%>/index"><span class="index_block_title"><%=page.pagename%></span></a>
+						</div>
+						<div class="index_block_con">
+							<%=page.pagedec%>
+						</div>
+						<div class="index_block_foot">
+							<div class="index_block_detail">
+								<span>view:&nbsp;&nbsp;<%=page.view%></span><span>author:&nbsp;&nbsp;<%=page.author%></span><span>time:&nbsp;&nbsp;<%=page.date%></span>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+				<%	}) %>
+			</div>
+			<div class="topview">
+				<div class="top_position">
+					<div class="topview_block">
+						<div class="topview_block_top">
+							<span>Hot</span>
+						</div>
+						<div class="topview_block_con">
+							<ul>
+								<% hotpage.forEach(function(one,index){ %>
+									<li>
+										<a href="/page/<%=one.uid%>/index"><%=one.pagename%></a>
+									</li>
+								<%	})%>
+							</ul>
+						</div>
+					</div>
+					<div class="quickenter_block">
+						<div class="quickenter_block_top">
+							<span>Entrance</span>
+						</div>
+						<div class="quickenter_block_con">
+							<ul>
+								<li><a href="/admin/index">用户中心</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+<% include footer %>

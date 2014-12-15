@@ -1,0 +1,68 @@
+.block_con .one_title {
+	font-size: 24px;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+}
+.block_con .one_dec {
+	margin-top: 5px;
+	padding: 5px 10px;
+}
+.block_con .one_dec span{
+	font-size: 14px;
+	padding: 5px 10px;
+	border: 1px solid #B2B2B2;
+	background-color: white;
+	border-radius: 5px;
+	line-height: 20px;
+	display: block;
+	float: left;
+}
+.block_con .one_con {
+	padding: 5px 10px;
+	margin-top: 30px;
+	border-radius: 5px;
+	line-height: 22px;
+	/*border: 1px solid #B2B2B2;*/
+}
+table {
+	border: 1px solid #B2B2B2;
+	border-collapse:collapse;
+	width: 100%;
+	border-radius: 5px;
+	background-color: white;
+	overflow: hidden;
+}
+table thead {
+	background-image: -webkit-linear-gradient( #ffffff, #E2DEDE) !important;
+	background-image: -moz-linear-gradient( #ffffff, #E2DEDE) !important;
+	background-image: linear-gradient( #ffffff, #E2DEDE) !important;
+}
+table th {
+	text-align: left;
+	/*background-color: rgb(206, 206, 208);*/
+	/*background-image: */
+}
+table td,table th {
+	border: 1px solid #B2B2B2;
+	padding: 7px 10px;
+}
+code {
+	background-color: white;
+	padding: 3px 10px;
+	border-radius: 5px;
+}
+pre {
+	background-color: white;
+	padding: 10px 15px;
+	line-height: 20px;
+	border: 1px solid #B2B2B2;
+	border-radius: 5px;
+}
+pre code {
+	padding: 0;
+	word-wrap: break-word;
+	border-radius: 0;
+}
+.hljs {
+	background-color: white;
+}
