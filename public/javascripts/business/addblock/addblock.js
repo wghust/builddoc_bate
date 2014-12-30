@@ -397,66 +397,71 @@ $(document).ready(function() {
             });
         },
 
-        // 添加额外markdown
-        _addEditNewMarkdown: function() {
-            $(".newmark").css({
-                'height': $(window).height() - 50 + 'px'
-            });
-            $(window).resize(function() {
-                $(".newmark").css({
-                    'height': $(window).height() - 50 + 'px'
-                });
-            });
-            $(".addmark").click(function() {
-                $(".addmarkfile").click();
-            });
-            $(".addmarkfile").change(function() {
-                var _panel = $(".newmark");
-                var file = $(".addmarkfile")[0].files[0];
-                var fileName = file.name.substring(0, file.name.lastIndexOf("."));
-                var fileType = file.type;
-                if (fileType != "text/markdown") {
-                    alert("文件类型错误");
-                } else {
-                    _panel.children('.newmark_title').text(fileName);
-                    var fileReader = new FileReader();
-                    fileReader.readAsText(file);
-                    fileReader.onload = function(e) {
-                        $(".newmark_textarea").val(e.target.result);
-                        if (_panel.data('open') == 0) {
-                            _panel.animate({
-                                'right': 0
-                            }, 1000, "easeOutElastic", function() {
-                                _panel.data({
-                                    'open': 1
-                                });
-                            });
-                        }
-                    };
-                }
-            });
-            $(".closenewmark").click(function() {
-                var _panel = $(".newmark");
-                _panel.animate({
-                    'right': '-450px'
-                }, 1000, "easeInCirc", function() {
-                    _panel.data({
-                        'open': 0
-                    });
-                    _panel.children('.newmark_title').text("");
-                    _panel.children(".newmark_textarea").val("");
-                    $(".addmarkfile").val("");
-                });
-            });
-        }
+        // // 添加额外markdown
+        // _addEditNewMarkdown: function() {
+        //     $(".newmark").css({
+        //         'height': $(window).height() - 50 + 'px'
+        //     });
+        //     $(window).resize(function() {
+        //         $(".newmark").css({
+        //             'height': $(window).height() - 50 + 'px'
+        //         });
+        //     });
+        //     $(".addmark").click(function() {
+        //         $(".addmarkfile").click();
+        //     });
+        //     $(".addmarkfile").change(function() {
+        //         var _panel = $(".newmark");
+        //         var file = $(".addmarkfile")[0].files[0];
+        //         var fileName = file.name.substring(0, file.name.lastIndexOf("."));
+        //         var fileType = file.type;
+        //         if (fileType != "text/markdown") {
+        //             alert("文件类型错误");
+        //         } else {
+        //             _panel.children('.newmark_title').text(fileName);
+        //             var fileReader = new FileReader();
+        //             fileReader.readAsText(file);
+        //             fileReader.onload = function(e) {
+        //                 $(".newmark_textarea").val(e.target.result);
+        //                 if (_panel.data('open') == 0) {
+        //                     _panel.animate({
+        //                         'right': 0
+        //                     }, 1000, "easeOutElastic", function() {
+        //                         _panel.data({
+        //                             'open': 1
+        //                         });
+        //                     });
+        //                 }
+        //             };
+        //         }
+        //     });
+        //     $(".closenewmark").click(function() {
+        //         var _panel = $(".newmark");
+        //         _panel.animate({
+        //             'right': '-450px'
+        //         }, 1000, "easeInCirc", function() {
+        //             _panel.data({
+        //                 'open': 0
+        //             });
+        //             _panel.children('.newmark_title').text("");
+        //             _panel.children(".newmark_textarea").val("");
+        //             $(".addmarkfile").val("");
+        //         });
+        //     });
+        // }
     };
 
-    var nowcon = $(".opcontainer");
-    if (nowcon.data("op") == "add") {
-        var block = new addblock();
-        block.init();
-    } else {
-        var thisnew = new newedit();
-        thisnew.init();
-    }
+    var block = new addblock();
+    block.init();
+    var thisnew = new newedit();
+    thisnew.init();
+
+    // var nowcon = $(".opcontainer");
+    // if (nowcon.data("op") == "add") {
+    //     var block = new addblock();
+    //     block.init();
+    // } else {
+    //     var thisnew = new newedit();
+    //     thisnew.init();
+    // }
 });

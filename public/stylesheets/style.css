@@ -102,7 +102,14 @@ a {
 	background-color: #3592DD;
 	color: white;
 }
-
+@media screen and (max-width: 768px) {
+	.nav ul li {
+		display: none;
+	}
+	.nav ul li:nth-child(1) {
+		display: inline-block;
+	}
+}
 .userifm {
 	float: right;
 }
@@ -661,6 +668,18 @@ a {
 		display: none;
 		opacity: 0;
 	}
+	.previewpanel img {
+		max-height: 200px;
+		max-width: 100%;
+	}
+	.previewpanel blockquote {
+		text-align: center;
+		padding: 5px;
+		margin: 0;
+		border-radius: 5px;
+		border: 1px solid #B2B2B2;
+		background-color: #F2F2F2;
+	}
 }
 @media screen and (max-width:768px) {
 	.write_form {
@@ -692,6 +711,18 @@ a {
 		display: none;
 		opacity: 0;
 	}
+	.previewpanel img {
+		max-height: 200px;
+		max-width: 100%;
+	}
+	.previewpanel blockquote {
+		text-align: center;
+		padding: 5px;
+		margin: 0;
+		border-radius: 5px;
+		border: 1px solid #B2B2B2;
+		background-color: #F2F2F2;
+	}
 }
 
 /*markdown*/
@@ -722,6 +753,7 @@ pre code {
 	padding: 0;
 	word-wrap: break-word;
 }
+
 
 
 

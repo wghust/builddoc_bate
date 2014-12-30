@@ -24,6 +24,18 @@
 	line-height: 22px;
 	/*border: 1px solid #B2B2B2;*/
 }
+.block_con .one_con img {
+	max-height: 200px;
+	max-width: 100%;
+}
+.block_con .one_con blockquote {
+	text-align: center;
+	padding: 5px;
+	margin: 0;
+	border-radius: 5px;
+	border: 1px solid #B2B2B2;
+	background-color: #F2F2F2;
+}
 table {
 	border: 1px solid #B2B2B2;
 	border-collapse:collapse;
